@@ -1,0 +1,8 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+lxml>=4.9.3
+python-dotenv>=1.0.0
+rich>=13.6.0
+ddddocr>=1.4.10
+selenium>=4.36.0  # 可选，用于自动登录
+

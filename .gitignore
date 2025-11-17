@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# 敏感信息
+login_tokens.json
+.env
+
+# 数据文件
+data/
+*.db
+*.csv
+*.bin
+debug_logs/
+
+# 归档文件（可选：如果不想提交归档文件，取消注释下一行）
+# archive/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 验证码图片
+captcha*.png
+
+# 调试文件
+api_response*.json
+login-response.bin
+login-debug-*.bin
+login-debug-*.txt
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+config/sport8_sync.json
+venv/
+venv-311/
+archive/
