@@ -1,0 +1,22 @@
+[2025-11-28 13:28:10] ==========================================
+[2025-11-28 13:28:10] 开始执行定时任务
+[2025-11-28 13:28:10] ==========================================
+[2025-11-28 13:28:10] 使用 Python: /Users/mxchip/.pyenv/shims/python3
+[2025-11-28 13:28:10] 激活虚拟环境: venv
+[2025-11-28 13:28:10] 开始执行数据爬取任务...
+[2025-11-28 13:28:10] 使用: auto_crawl_with_ocr.py
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 14, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+[2025-11-28 21:58:06] ==========================================
+[2025-11-28 21:58:06] 开始执行定时任务
+[2025-11-28 21:58:06] ==========================================
+[2025-11-28 21:58:06] 使用 Python: /Users/mxchip/.pyenv/shims/python3
+[2025-11-28 21:58:06] 激活虚拟环境: venv
+[2025-11-28 21:58:06] 开始执行数据爬取任务...
+[2025-11-28 21:58:06] 使用: auto_crawl_with_ocr.py
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 14, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'

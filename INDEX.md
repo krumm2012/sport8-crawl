@@ -5,6 +5,7 @@
 | 你想要... | 查看文档 | 时间 |
 |-----------|----------|------|
 | **最快开始使用** | [QUICKSTART.md](QUICKSTART.md) | 5 分钟 |
+| **Docker 部署** | [DOCKER_QUICKSTART.md](DOCKER_QUICKSTART.md) | 5 分钟 |
 | **了解完整功能** | [README.md](README.md) | 10 分钟 |
 | **选择登录方案** | [AUTO_LOGIN_GUIDE.md](AUTO_LOGIN_GUIDE.md) | 5 分钟 |
 
@@ -65,6 +66,13 @@
 - 多种使用方法
 - API 参考文档
 - 集成到爬虫
+
+#### 8. [LOCAL_SCHEDULE_GUIDE.md](LOCAL_SCHEDULE_GUIDE.md) 🕐 新增
+**Mac 本地定时任务指南**
+- launchd 定时任务设置
+- 自动执行配置
+- 日志查看和管理
+- 常见问题解答
 
 ---
 
@@ -163,11 +171,42 @@ python3 diagnose_token_issue.py
 python3 integrations/sport8_sync.py --loop
 ```
 
+#### 10. `run_scheduled.sh` 🕐 新增
+**定时任务执行脚本（Mac 本地）**
+- 自动执行数据爬取和同步
+- 日志记录
+- 虚拟环境自动激活
+
+```bash
+./run_scheduled.sh  # 手动执行一次
+```
+
+#### 11. `setup_schedule.sh` 🕐 新增
+**定时任务设置脚本（Mac）**
+- 自动创建 launchd 配置文件
+- 支持多个时间点
+- 一键安装定时任务
+
+```bash
+./setup_schedule.sh  # 设置定时任务
+```
+
+#### 12. `scheduler.py`
+**Python 定时任务调度器（可选）**
+- 可用于手动执行或测试
+- 支持单次执行和循环模式
+
+```bash
+python3 scheduler.py        # 启动调度器（不推荐，使用 launchd 更好）
+python3 scheduler.py crawl  # 执行一次爬取
+python3 scheduler.py sync   # 执行一次同步
+```
+
 ---
 
 ### 辅助工具
 
-#### 10. `example_usage.py`
+#### 11. `example_usage.py`
 **使用示例**
 - 5 个实用示例
 - 过滤和处理数据
@@ -177,7 +216,7 @@ python3 integrations/sport8_sync.py --loop
 python3 example_usage.py
 ```
 
-#### 11. `test_all_methods.sh`
+#### 12. `test_all_methods.sh`
 **测试脚本**
 - 检查环境
 - 推荐方案
@@ -215,6 +254,25 @@ pip install -r requirements.txt
 **Git 忽略文件**
 - 保护敏感信息
 - 忽略临时文件
+
+### 5. `config/sport8_sync.json`
+**Sport8 同步配置**
+- 第三方系统账号信息
+- 场地映射关系
+- 时间窗口配置
+
+### 6. `run_scheduled.sh` 🕐 新增
+**定时任务执行脚本**
+- 自动检测 Python 环境
+- 自动激活虚拟环境
+- 执行爬取和同步任务
+- 日志记录
+
+### 7. `setup_schedule.sh` 🕐 新增
+**定时任务设置脚本**
+- 创建 launchd 配置文件
+- 自动安装定时任务
+- 支持多个时间点
 
 ---
 
@@ -290,6 +348,7 @@ pip install -r requirements.txt
 | 问题 | 查看 |
 |------|------|
 | 如何快速开始？ | [QUICKSTART.md](QUICKSTART.md) |
+| 如何设置定时任务？ | [LOCAL_SCHEDULE_GUIDE.md](LOCAL_SCHEDULE_GUIDE.md) |
 | 有哪些功能？ | [README.md](README.md) |
 | 如何选择登录方案？ | [AUTO_LOGIN_GUIDE.md](AUTO_LOGIN_GUIDE.md) |
 | 为什么无法获取 token？ | [TOKEN_EXTRACTION_METHODS.md](TOKEN_EXTRACTION_METHODS.md) |
@@ -392,6 +451,6 @@ python3 diagnose_token_issue.py
 
 ---
 
-*最后更新：2025-11-14*  
-*版本：v2.0.0*
+*最后更新：2025-11-18*  
+*版本：v2.2.0（移除 Docker，改用 Mac 本地定时任务）*
 

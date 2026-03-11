@@ -16,6 +16,7 @@
 - ✅ 数据导出为 CSV 格式
 - ✅ 清晰的状态显示和错误处理
 - ✅ Sport8 第三方系统同步（自动预约 + 支付）
+- ✅ Docker 部署支持，定时任务自动执行 ← **新增**
 
 ## 安装依赖
 
@@ -322,6 +323,34 @@ days = 7  # 修改为你需要的天数
 
 A: CSV 格式，可以用 Excel、Numbers 或任何文本编辑器打开。使用 UTF-8-BOM 编码，确保中文正常显示。
 
+## Mac 本地定时任务 🕐
+
+> 🚀 **使用 launchd 自动执行定时任务**
+
+### 快速开始
+
+```bash
+# 1. 设置定时任务（自动创建 launchd 配置）
+./setup_schedule.sh
+
+# 2. 手动测试执行
+./run_scheduled.sh
+
+# 3. 查看日志
+tail -f logs/scheduled_$(date +%Y%m%d).log
+```
+
+### 定时任务
+
+- **数据爬取**：每天 08:00、12:00、18:00 自动执行
+- **数据同步**：每次爬取后自动执行一次
+
+### 详细文档
+
+查看 [LOCAL_SCHEDULE_GUIDE.md](LOCAL_SCHEDULE_GUIDE.md) 了解完整的设置指南、配置选项和故障排查。
+
+---
+
 ## 技术栈
 
 - **Python 3.9+**
@@ -329,6 +358,7 @@ A: CSV 格式，可以用 Excel、Numbers 或任何文本编辑器打开。使�
 - **BeautifulSoup4**: HTML 解析
 - **Selenium**: 浏览器自动化（可选）
 - **ddddocr**: 验证码识别（实验性）
+- **launchd**: Mac 定时任务（可选）
 
 ## 注意事项
 

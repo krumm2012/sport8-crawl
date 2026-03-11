@@ -1,0 +1,68 @@
+[2025-11-18 10:38:36] ==========================================
+[2025-11-18 10:38:36] 开始执行定时任务
+[2025-11-18 10:38:36] ==========================================
+[2025-11-18 10:38:36] 使用 Python: /Users/mxchip/.pyenv/shims/python3
+[2025-11-18 10:38:36] 激活虚拟环境: venv
+[2025-11-18 10:38:36] 开始执行数据爬取任务...
+[2025-11-18 10:38:36] 使用: auto_crawl_with_ocr.py
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 14, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+[2025-11-18 10:40:36] ==========================================
+[2025-11-18 10:40:36] 开始执行定时任务
+[2025-11-18 10:40:36] ==========================================
+[2025-11-18 10:40:36] 使用 Python: /Users/mxchip/.pyenv/shims/python3
+[2025-11-18 10:40:36] 激活虚拟环境: venv
+[2025-11-18 10:40:36] 开始执行数据爬取任务...
+[2025-11-18 10:40:36] 使用: auto_crawl_with_ocr.py
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 14, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+[2025-11-18 10:45:37] ==========================================
+[2025-11-18 10:45:37] 开始执行定时任务
+[2025-11-18 10:45:37] ==========================================
+[2025-11-18 10:45:37] 使用 Python: /Users/mxchip/Documents/sport8-crawl/venv-311/bin/python3
+[2025-11-18 10:45:37] 激活虚拟环境: venv
+[2025-11-18 10:45:37] 开始执行数据爬取任务...
+[2025-11-18 10:45:37] 使用: auto_crawl_with_ocr.py
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 247, in main
+    tokens, driver = auto_login_with_ocr()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 49, in auto_login_with_ocr
+    driver.set_window_size(1200, 900)
+    ^^^^^^
+UnboundLocalError: cannot access local variable 'driver' where it is not associated with a value
+
+======================================================================
+                    🚀 一键自动爬虫（带验证码识别）                    
+======================================================================
+功能：
+  1. 自动登录（自动识别验证码）✨ 新增
+  2. 自动提取 tokens
+  3. 自动爬取场地数据
+  4. 自动爬取订单数据
+  5. 自动保存 CSV
+  6. 浏览器保持打开
+======================================================================
+======================================================================
+步骤 1/3：自动登录（带验证码识别）
+======================================================================
+✓ 已加载 ddddocr 识别引擎
+
+[1/5] 启动浏览器...
+
+❌ 错误: cannot access local variable 'driver' where it is not associated with a value
+[2025-11-18 10:46:35] ✓ 数据爬取成功
+[2025-11-18 10:46:35] 开始执行数据同步任务...
+[2025-11-18 10:46:35] 使用: integrations/sport8_sync.py (单次执行)
+2025-11-18 10:46:36 | INFO     | Orders sync complete. created=0 payments=0 skipped=1
+2025-11-18 10:46:36 | INFO     | Logging in as superadmin
+2025-11-18 10:46:36 | INFO     | Login successful, token acquired.
+2025-11-18 10:46:38 | INFO     | Locked bookings sync complete. created=11 skipped=2
+[2025-11-18 10:46:38] ✓ 数据同步成功
+[2025-11-18 10:46:38] ==========================================
+[2025-11-18 10:46:38] 定时任务执行完成
+[2025-11-18 10:46:38] ==========================================

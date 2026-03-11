@@ -1,0 +1,397 @@
+[2025-12-08 11:34:00] ==========================================
+[2025-12-08 11:34:00] 开始执行定时任务
+[2025-12-08 11:34:00] ==========================================
+[2025-12-08 11:34:00] 使用 Python: /Users/mxchip/Documents/sport8-crawl/venv-311/bin/python3
+[2025-12-08 11:34:00] 激活虚拟环境: venv
+[2025-12-08 11:34:00] 开始执行数据爬取任务...
+[2025-12-08 11:34:00] 使用: auto_crawl_with_ocr.py
+There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache
+Error sending stats to Plausible: error sending request for url (https://plausible.io/api/event)
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/auto_crawl_with_ocr.py", line 61, in auto_login_with_ocr
+    driver.get(login_url)
+  File "/Users/mxchip/Documents/sport8-crawl/venv-311/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 483, in get
+    self.execute(Command.GET, {"url": url})
+  File "/Users/mxchip/Documents/sport8-crawl/venv-311/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 458, in execute
+    self.error_handler.check_response(response)
+  File "/Users/mxchip/Documents/sport8-crawl/venv-311/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 233, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=142.0.7444.176)
+Stacktrace:
+0   chromedriver                        0x000000010373f698 chromedriver + 6153880
+1   chromedriver                        0x0000000103736b6a chromedriver + 6118250
+2   chromedriver                        0x00000001031cba5b chromedriver + 436827
+3   chromedriver                        0x00000001031c27a6 chromedriver + 399270
+4   chromedriver                        0x00000001031b38d8 chromedriver + 338136
+5   chromedriver                        0x00000001031b56fb chromedriver + 345851
+6   chromedriver                        0x00000001031b3e13 chromedriver + 339475
+7   chromedriver                        0x00000001031b3669 chromedriver + 337513
+8   chromedriver                        0x00000001031b3369 chromedriver + 336745
+9   chromedriver                        0x00000001031b11c1 chromedriver + 328129
+10  chromedriver                        0x00000001031b19aa chromedriver + 330154
+11  chromedriver                        0x00000001031cf269 chromedriver + 451177
+12  chromedriver                        0x000000010326d885 chromedriver + 1099909
+13  chromedriver                        0x000000010326cc8e chromedriver + 1096846
+14  chromedriver                        0x0000000103210b6f chromedriver + 719727
+15  chromedriver                        0x0000000103211871 chromedriver + 723057
+16  chromedriver                        0x00000001036fc011 chromedriver + 5877777
+17  chromedriver                        0x00000001037004c2 chromedriver + 5895362
+18  chromedriver                        0x00000001036d8155 chromedriver + 5730645
+19  chromedriver                        0x0000000103700f6f chromedriver + 5898095
+20  chromedriver                        0x00000001036c7dc4 chromedriver + 5664196
+21  chromedriver                        0x0000000103723b48 chromedriver + 6040392
+22  chromedriver                        0x0000000103723d0d chromedriver + 6040845
+23  chromedriver                        0x0000000103736751 chromedriver + 6117201
+24  libsystem_pthread.dylib             0x00007ff80b3fe1d3 _pthread_start + 125
+25  libsystem_pthread.dylib             0x00007ff80b3f9bd3 thread_start + 15
+
+
+======================================================================
+                    🚀 一键自动爬虫（带验证码识别）                    
+======================================================================
+功能：
+  1. 自动登录（自动识别验证码）✨ 新增
+  2. 自动提取 tokens
+  3. 自动爬取场地数据
+  4. 自动爬取订单数据
+  5. 自动保存 CSV
+  6. 浏览器保持打开
+======================================================================
+======================================================================
+步骤 1/3：自动登录（带验证码识别）
+======================================================================
+✓ 已加载 ddddocr 识别引擎
+
+[1/5] 启动浏览器...
+[2/5] 访问登录页...
+
+❌ 错误: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=142.0.7444.176)
+Stacktrace:
+0   chromedriver                        0x000000010373f698 chromedriver + 6153880
+1   chromedriver                        0x0000000103736b6a chromedriver + 6118250
+2   chromedriver                        0x00000001031cba5b chromedriver + 436827
+3   chromedriver                        0x00000001031c27a6 chromedriver + 399270
+4   chromedriver                        0x00000001031b38d8 chromedriver + 338136
+5   chromedriver                        0x00000001031b56fb chromedriver + 345851
+6   chromedriver                        0x00000001031b3e13 chromedriver + 339475
+7   chromedriver                        0x00000001031b3669 chromedriver + 337513
+8   chromedriver                        0x00000001031b3369 chromedriver + 336745
+9   chromedriver                        0x00000001031b11c1 chromedriver + 328129
+10  chromedriver                        0x00000001031b19aa chromedriver + 330154
+11  chromedriver                        0x00000001031cf269 chromedriver + 451177
+12  chromedriver                        0x000000010326d885 chromedriver + 1099909
+13  chromedriver                        0x000000010326cc8e chromedriver + 1096846
+14  chromedriver                        0x0000000103210b6f chromedriver + 719727
+15  chromedriver                        0x0000000103211871 chromedriver + 723057
+16  chromedriver                        0x00000001036fc011 chromedriver + 5877777
+17  chromedriver                        0x00000001037004c2 chromedriver + 5895362
+18  chromedriver                        0x00000001036d8155 chromedriver + 5730645
+19  chromedriver                        0x0000000103700f6f chromedriver + 5898095
+20  chromedriver                        0x00000001036c7dc4 chromedriver + 5664196
+21  chromedriver                        0x0000000103723b48 chromedriver + 6040392
+22  chromedriver                        0x0000000103723d0d chromedriver + 6040845
+23  chromedriver                        0x0000000103736751 chromedriver + 6117201
+24  libsystem_pthread.dylib             0x00007ff80b3fe1d3 _pthread_start + 125
+25  libsystem_pthread.dylib             0x00007ff80b3f9bd3 thread_start + 15
+
+
+❌ 登录失败，无法继续
+[2025-12-08 11:35:39] ✓ 数据爬取成功
+[2025-12-08 11:35:39] 开始执行数据同步任务...
+[2025-12-08 11:35:39] 使用: integrations/sport8_sync.py (单次执行)
+2025-12-08 11:35:39 | INFO     | Starting looped sync every 900 seconds
+2025-12-08 11:35:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 11:35:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 11:35:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 11:50:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 11:50:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 11:50:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 12:05:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 12:05:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 12:05:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 12:20:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 12:20:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 12:20:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 12:35:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 12:35:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 12:35:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 12:50:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 12:50:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 12:50:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 13:05:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 13:05:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 13:05:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 13:20:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 13:20:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 13:20:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 13:35:39 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 13:35:39 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 13:35:39 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 13:50:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 13:50:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 13:50:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 14:05:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 14:05:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 14:05:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 14:20:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 14:20:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 14:20:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 14:35:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 14:35:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 14:35:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 14:50:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 14:50:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 14:50:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 15:05:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 15:05:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 15:05:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 15:20:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 15:20:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 15:20:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 15:35:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 15:35:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 15:35:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 15:50:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 15:50:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 15:50:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 16:05:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 16:05:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 16:05:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 16:20:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 16:20:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 16:20:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 16:35:40 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 16:35:40 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 16:35:40 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 16:50:41 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 16:50:41 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 16:50:41 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 17:05:41 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 17:05:41 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 17:05:41 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 17:20:41 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 17:20:41 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 17:20:41 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 17:35:41 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 17:35:41 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 17:35:41 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 17:50:41 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 17:50:41 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 17:50:41 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 19:31:14 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 19:31:14 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 19:31:14 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 20:15:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 20:15:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 20:15:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 20:30:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 20:30:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 20:30:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 20:45:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 20:45:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 20:45:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 21:02:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 21:02:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 21:02:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 21:17:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 21:17:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 21:17:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 21:32:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 21:32:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 21:32:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 21:47:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 21:47:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 21:47:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 22:02:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 22:02:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 22:02:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 22:17:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 22:17:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 22:17:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 22:32:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 22:32:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 22:32:21 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 22:47:21 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-08 22:47:21 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-08 22:47:22 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-08 23:02:22 | INFO     | Current time 23:02 outside window 07:00-23:00. Sleeping until window opens.
+2025-12-08 23:17:22 | INFO     | Current time 23:17 outside window 07:00-23:00. Sleeping until window opens.
+2025-12-08 23:32:22 | INFO     | Current time 23:32 outside window 07:00-23:00. Sleeping until window opens.
+2025-12-08 23:47:22 | INFO     | Current time 23:47 outside window 07:00-23:00. Sleeping until window opens.
+2025-12-09 08:25:34 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 08:25:34 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 08:25:34 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 08:40:34 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 08:40:34 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 08:40:34 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 08:55:34 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 08:55:34 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 08:55:34 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 09:10:34 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 09:10:34 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 09:10:34 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 09:25:34 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 09:25:34 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 09:25:35 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 09:40:35 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 09:40:35 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 09:40:35 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 09:56:11 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 09:56:11 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 09:56:11 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 10:11:11 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 10:11:11 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 10:11:11 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 10:26:11 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 10:26:11 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 10:26:11 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 10:41:11 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 10:41:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 10:41:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 10:56:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 10:56:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 10:56:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 11:11:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 11:11:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 11:11:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 11:26:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 11:26:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 11:26:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 11:41:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 11:41:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 11:41:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 11:56:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 11:56:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 11:56:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 12:11:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 12:11:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 12:11:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 12:26:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 12:26:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 12:26:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 12:41:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 12:41:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 12:41:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 12:56:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 12:56:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 12:56:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 13:11:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 13:11:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 13:11:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 13:26:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 13:26:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 13:26:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 13:41:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 13:41:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 13:41:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 13:56:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 13:56:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 13:56:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 14:11:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 14:11:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 14:11:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 14:26:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 14:26:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 14:26:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 14:41:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 14:41:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 14:41:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 14:56:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 14:56:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 14:56:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 15:11:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 15:11:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 15:11:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 15:26:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 15:26:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 15:26:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 15:41:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 15:41:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 15:41:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 15:56:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 15:56:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 15:56:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 16:11:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 16:11:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 16:11:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 16:26:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 16:26:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 16:26:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 16:41:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 16:41:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 16:41:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 16:56:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 16:56:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 16:56:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 17:11:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 17:11:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 17:11:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 17:26:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 17:26:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 17:26:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 17:41:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 17:41:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 17:41:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-09 17:56:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-09 17:56:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-09 17:56:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 02:11:31 | INFO     | Current time 02:11 outside window 07:00-23:00. Sleeping until window opens.
+2025-12-10 09:35:51 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 09:35:51 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 09:35:51 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 09:50:53 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 09:50:53 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 09:50:53 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 10:05:53 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 10:05:53 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 10:05:53 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 10:20:54 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 10:20:54 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 10:20:54 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 10:35:54 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 10:35:54 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 10:35:54 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 10:50:54 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 10:50:54 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 10:50:54 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 11:05:54 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 11:05:54 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 11:05:54 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 11:20:54 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 11:20:54 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 11:20:54 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 12:43:48 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 12:43:48 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 12:43:48 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 13:53:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 13:53:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 13:53:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 14:08:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 14:08:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 14:08:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 14:23:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 14:23:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 14:23:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 14:38:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 14:38:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 14:38:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 14:53:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 14:53:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 14:53:12 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 15:08:12 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 15:08:12 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 15:08:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 15:23:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 15:23:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 15:23:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+2025-12-10 15:38:13 | INFO     | Within active window (07:00-23:00). Running sync...
+2025-12-10 15:38:13 | INFO     | Orders sync complete. created=0 payments=0 skipped=3
+2025-12-10 15:38:13 | INFO     | Locked bookings sync complete. created=0 skipped=44
+Traceback (most recent call last):
+  File "/Users/mxchip/Documents/sport8-crawl/integrations/sport8_sync.py", line 547, in <module>
+    main()
+  File "/Users/mxchip/Documents/sport8-crawl/integrations/sport8_sync.py", line 542, in main
+    time.sleep(args.interval)
+KeyboardInterrupt
