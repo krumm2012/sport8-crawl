@@ -230,13 +230,64 @@ class AsyncSport8Crawler:
         if STATE_FILE.exists():
             with open(STATE_FILE, 'r') as f:
                 return json.load(f)
-        return {"last_crawl": None, "courts": {}}
+        return {
+            "last_crawl": None,
+            "courts": {},
+            "last_bookings": {}  # 记录上次各场地各时间段状态
+        }
     
     def _save_state(self, state: Dict):
         """保存爬取状态"""
         STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(STATE_FILE, 'w') as f:
-            json.dump(state, f, indent=2)
+            json.dump(state, f, indent=2, default=str)
+    
+    def _get_booking_key(self, booking: Booking) -> str:
+        """生成预订记录的唯一键"""
+        return f"{booking.court_name}_{booking.date}_{booking.hour}"
+    
+    def _filter_changed_bookings(
+        self,
+        new_bookings: List[Booking],
+        state: Dict
+    ) -> List[Booking]:
+        """
+        增量过滤：只返回状态有变化的预订
+        
+        Returns:
+            仅包含状态变化的预订列表
+        """
+        last_bookings = state.get("last_bookings", {})
+        changed = []
+        
+        for booking in new_bookings:
+            key = self._get_booking_key(booking)
+            last = last_bookings.get(key)
+            
+            # 如果是新记录或状态有变化
+            if not last or last.get("status") != booking.status:
+                changed.append(booking)
+                logger.debug(f"变化 detected: {key} {last.get('status') if last else 'None'} -> {booking.status}")
+        
+        if changed:
+            logger.info(f"增量更新: {len(changed)}/{len(new_bookings)} 条记录有变化")
+        else:
+            logger.info("无变化，数据已是最新")
+        
+        return changed
+    
+    def _update_state_bookings(
+        self,
+        state: Dict,
+        bookings: List[Booking]
+    ):
+        """更新状态中的预订记录"""
+        if "last_bookings" not in state:
+            state["last_bookings"] = {}
+        
+        for booking in bookings:
+            key = self._get_booking_key(booking)
+            state["last_bookings"][key] = booking.to_dict()
     
     async def crawl(
         self,
@@ -298,18 +349,32 @@ class AsyncSport8Crawler:
         
         self.stats["end_time"] = datetime.now()
         
+        # 加载上次状态
+        state = self._load_state()
+        
+        # 增量过滤：只保存变化的记录
+        if incremental and all_bookings:
+            changed_bookings = self._filter_changed_bookings(all_bookings, state)
+            bookings_to_save = changed_bookings if changed_bookings else []
+        else:
+            bookings_to_save = all_bookings
+        
         # 保存数据
-        if all_bookings:
+        if bookings_to_save:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"bookings_async_{timestamp}.csv"
-            await self._save_bookings(all_bookings, filename)
+            await self._save_bookings(bookings_to_save, filename)
+            
+            # 更新状态中的预订记录
+            self._update_state_bookings(state, all_bookings)
         
         # 保存状态
-        state = {
+        state.update({
             "last_crawl": datetime.now().isoformat(),
             "total_bookings": len(all_bookings),
+            "changed_bookings": len(bookings_to_save) if bookings_to_save else 0,
             "stats": self.stats
-        }
+        })
         self._save_state(state)
         
         return {
