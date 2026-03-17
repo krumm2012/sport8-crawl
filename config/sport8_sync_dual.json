@@ -1,0 +1,38 @@
+{
+  "name": "hehaa135booking",
+  "base_url": "https://bakewell.cloud/api/v1",
+  "backup_url": "http://124.223.13.170/api/v1",
+  "username": "superadmin",
+  "password": "superadmin123",
+  "venue_id": 12,
+  "orders_glob": "orders-*.csv",
+  "bookings_glob": "bookings-*.csv",
+  "default_phone": "00000000000",
+  "payment_method": "sport8",
+  "loop_enabled": true,
+  "loop_interval": 1800,
+  "window_start": 7,
+  "window_end": 23,
+  "court_id_map": {
+    "[学练馆][01]": 24,
+    "[学练馆][02]": 25,
+    "[学练馆小][03]": 26,
+    "学练馆-01": 24,
+    "学练馆-02": 25,
+    "学练馆小-03": 26
+  },
+  "targets": [
+    {
+      "name": "bakewell",
+      "base_url": "https://bakewell.cloud/api/v1",
+      "username": "superadmin",
+      "password": "superadmin123"
+    },
+    {
+      "name": "backup",
+      "base_url": "http://124.223.13.170/api/v1",
+      "username": "superadmin",
+      "password": "superadmin123"
+    }
+  ]
+}
