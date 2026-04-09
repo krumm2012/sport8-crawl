@@ -145,8 +145,46 @@ python3 async_crawler.py --concurrent 5
 - 减少并发数
 - 减少爬取天数，分批执行
 
+## 🔥 增量爬取 & 事件监控
+
+### 增量监控服务
+
+持续监控场地状态变化，检测到变化时触发回调：
+
+```bash
+# 基础用法 - 每60秒检查一次
+python3 incremental_monitor.py --interval 60
+
+# 带 Webhook 通知
+python3 incremental_monitor.py --interval 60 --webhook http://localhost:3000/webhook
+```
+
+### 增量特性
+
+- ✅ **状态变化检测** - 只保存变化的记录
+- ✅ **Webhook 通知** - 实时推送变化事件
+- ✅ **增量 CSV** - 减少 90%+ 的存储写入
+- ✅ **智能对比** - 检测新增、状态变更
+
+### 事件格式
+
+```json
+{
+  "type": "status_change",
+  "timestamp": "2026-03-11T23:30:00",
+  "court": "学练馆-01",
+  "date": "2026-03-12",
+  "hour": 14,
+  "from_status": "available",
+  "to_status": "locked"
+}
+```
+
 ## 📝 TODO
 
+- [x] 异步并发爬虫
+- [x] 增量爬取支持
+- [x] Webhook 事件通知
 - [ ] 集成 Redis 缓存
 - [ ] WebSocket 实时推送
 - [ ] 分布式爬虫支持

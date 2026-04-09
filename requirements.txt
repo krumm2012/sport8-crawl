@@ -6,3 +6,7 @@ rich>=13.6.0
 ddddocr>=1.4.10
 selenium>=4.36.0  # 可选，用于自动登录
 
+# 异步爬虫依赖
+aiohttp>=3.9.0
+aiofiles>=23.2.0
+
